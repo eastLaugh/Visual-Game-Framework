@@ -1,0 +1,18 @@
+ID,Type,Character,Content,Left,Medium,Right,Postscript,TO
+1,Dialogue,yuri,你好，人家要演示一下对话系统,,,yuri_,,
+2,Dialogue,yuri,对话系统文件是一个表格,,,yuri_,,
+3,Dialogue,yuri,也就是你只要完成一个表格就好了,,,yuri_,,
+4,Dialogue,yuri,你可以用Excel或WPS打开表格模板,,,yuri_,,
+5,Dialogue,yuri,输入内容，并保存，然后发给人家,,,yuri_,,
+6,Dialogue,yuri,原来如此！！,yvain_,,,,
+7,Dialogue,yuri,你还有什么想问的吗,,,yuri_,,
+8,Option,yuri,表格格式是什么样的,yvain_,,,,11
+9,Option,yuri,我需要什么软件，一定要吗,yvain_,,,,
+10,Option,yuri,有没有什么技巧,yvain_,,,,
+//这里可以写批注，批注用//表示，不会被系统识别,,,,,,,,
+//试试,,,,,,,,
+//分割,,,,,,,,
+11,Dialogue,yuri,表头分别是ID TYPE CHARACTER CONTENT LEFT MEDIUM RIGHT POSTSCRIPT TO,,,yuri_,,
+12,Dialogue,yuri,ID是,,,yuri_,,
+13,Dialogue,yuri,,,,yuri_,,
+14,,,,,,,,

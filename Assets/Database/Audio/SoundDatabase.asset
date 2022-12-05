@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32901af284eaead41b6fb06feeaec324, type: 3}
+  m_Name: SoundDatabase
+  m_EditorClassIdentifier: 
+  soundDetails:
+  - SoundName: DB
+    SoundClip: {fileID: 8300000, guid: 366f95b877853ef4990b77568e22322d, type: 3}
+    SoundPitchMin: 0
+    SoundPitchMax: 0
+    SoundVolume: 0
+  - SoundName: M
+    SoundClip: {fileID: 8300000, guid: 204be64b079e3ac40b100f73c507f518, type: 3}
+    SoundPitchMin: 0
+    SoundPitchMax: 0
+    SoundVolume: 0
+  - SoundName: AI
+    SoundClip: {fileID: 8300000, guid: e3abf715b0c41b9409e88a1bb89e7c73, type: 3}
+    SoundPitchMin: 0
+    SoundPitchMax: 0
+    SoundVolume: 0
+  - SoundName: Fight
+    SoundClip: {fileID: 8300000, guid: 4b43cbf40f0f51e459ec1596408e5bdb, type: 3}
+    SoundPitchMin: 0
+    SoundPitchMax: 0
+    SoundVolume: 0
