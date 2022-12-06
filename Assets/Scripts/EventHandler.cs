@@ -28,11 +28,11 @@ public class EventHandler
       PlayMusic?.Invoke(name);
    }
 
-   public static Action OnTimelinePlay;
+   // public static Action OnTimelinePlay;
 
-   public static void OnTimelinePlayInvoke(){
-      OnTimelinePlay?.Invoke();
-   }
+   // public static void OnTimelinePlayInvoke(){
+   //    OnTimelinePlay?.Invoke();
+   // }
    
    
 }

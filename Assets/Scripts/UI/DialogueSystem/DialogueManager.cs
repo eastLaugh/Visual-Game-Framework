@@ -45,6 +45,8 @@ namespace VGF.Dialogue
 
         private Coroutine currentCoroutine;
 
+
+        [Obsolete]
         public bool isChatting{
             get{
                 return currentDialogue!=null;
@@ -53,10 +55,14 @@ namespace VGF.Dialogue
 
         public void Run(Dialogue_SO dialogue)
         {
+            
+
+
             currentDialogue = dialogue;
             index=-1;
             
             DialogueCanvas.gameObject.SetActive(true);
+            DialoguePanel.GetComponent<Animator>().Play("Bloom");
             Player.instance.Mute=true;
             // Player.instance.characterController.enabled=false;
             
@@ -84,7 +90,7 @@ namespace VGF.Dialogue
             if(currentCoroutine!=null){
                 StopCoroutine(currentCoroutine);
                 currentCoroutine=null;
-                if(index<currentDialogue.dialoguePieces.Count)
+                if(index>=0&&index<currentDialogue.dialoguePieces.Count)
                     DialogueText.text=currentDialogue.dialoguePieces[index].Content;
                 return;
             }
@@ -126,13 +132,13 @@ namespace VGF.Dialogue
         /// <summary>
         /// 一个Dialogue_SO结束后调用的
         /// </summary>
-        void End(){
+        public void End(){
             Debug.Log("<color=green>对话结束</color>");
             
             IsTimeline=false;//不管是不是Timeline的对话系统，都可以关掉timeline bool
-
-            if(dialoguesCallBackDict.ContainsKey(currentDialogue))
-                dialoguesCallBackDict[currentDialogue]?.Invoke();  //可选调用
+            if(currentDialogue)
+                if(dialoguesCallBackDict.ContainsKey(currentDialogue))
+                    dialoguesCallBackDict[currentDialogue]?.Invoke();  //可选调用
 
             
             Player.instance.Mute=false;
@@ -140,6 +146,8 @@ namespace VGF.Dialogue
             currentDialogue=null;
 
             DialoguePanel.GetComponent<Animator>().SetTrigger("Fade");
+            
+            
             //nmaitonEnd();
             //
             //TODO↑目前技术不够无法解决的问题，希望能使得动画播放完毕后回到第一帧，并且执行AnmationEnd 相关解决方案 State  machine behaviour和anmation event均不太满意
@@ -187,6 +195,19 @@ namespace VGF.Dialogue
             set{
                 _auto=value;
             }
+        }
+
+
+        /// <summary>
+        /// 强制结束，目前用在timeline按空格键后skip的对应实现
+        /// </summary>
+        public void Stop(){
+            //Auto=false;
+            Auto=false;
+            currentDialogue=null;
+            //End();
+            // 
+            // DialoguePanel.GetComponent<Animator>().SetTrigger("Fade");
         }
     }
 }

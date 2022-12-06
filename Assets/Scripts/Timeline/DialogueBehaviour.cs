@@ -11,6 +11,9 @@ public class DialogueBehaviour : PlayableBehaviour
     public DialogueClip clip;
     public PlayableDirector director;
 
+    /// <summary>
+    /// 该片段已被播放过
+    /// </summary>
     private bool isPlayed=false;
 
     public override void OnPlayableCreate(Playable playable)

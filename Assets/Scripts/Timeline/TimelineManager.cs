@@ -29,7 +29,7 @@ public class TimelineManager : Singleton<TimelineManager>
     void Update()
     {
         if(IsShowing&&Input.GetKeyDown(KeyCode.Space))
-            director.Stop();
+            IsShowing=false;
     }
 
     public static PlayableAsset GetPlayableAssetFromResources(string fileName)
@@ -77,6 +77,14 @@ public class TimelineManager : Singleton<TimelineManager>
 
     private void OnTimelineStop(PlayableDirector pd)
     {
+        // AfterAction=()=>{
+        //     Debug.LogError("Timelime已结束");
+        // };
+
+        //AfterAction用于Timeline结束后执行后面的语句，与dialogue系统无关
+
+        VGF.Dialogue.DialogueManager.instance.Stop();
+
         Debug.LogFormat("<color=purple>OnTimeLineStop()</color>");
         try
         {
@@ -92,6 +100,7 @@ public class TimelineManager : Singleton<TimelineManager>
 
 
         AfterAction?.Invoke();
+        if(AfterAction==null)
         AfterAction=()=>{
             Debug.LogError("调用了空的Timeline AfterAction");
         };
@@ -126,7 +135,6 @@ public class TimelineManager : Singleton<TimelineManager>
         Debug.LogFormat("<color=purple>TimeLine开始播放 name={0}</color>", name);
         IsShowing = true;
 
-        EventHandler.OnTimelinePlayInvoke();   //调用Timeline的广播消息
         try
         {
             MainCamera.enabled = false;
