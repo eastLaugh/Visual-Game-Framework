@@ -87,7 +87,7 @@ public class InventoryEditor : EditorWindow
         itemList = database.itemDataList;
         //如果不标记则无法记录数据
         EditorUtility.SetDirty(database);
-        Debug.Log(itemList[0].itemID);
+        //Debug.Log(itemList[0].itemID);
     }
     private void GenerateListView()
     {
@@ -101,7 +101,7 @@ public class InventoryEditor : EditorWindow
                 e.Q<Label>("List_Name").text = itemList[i] == null ? "NO ITEM" : itemList[i].itemName;
             }
         };
-        Debug.Log(itemList[0].itemID);
+        //Debug.Log(itemList[0].itemID);
         itemListView.itemsSource = itemList;
         itemListView.makeItem = makeItem;
         itemListView.bindItem = bindItem;
