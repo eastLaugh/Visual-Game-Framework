@@ -47,7 +47,7 @@ public class Session1 : ChapterBase
 
                     #endregion
                     PlayMusic("M");
-
+                    PlayMusic("demo1");
                     AfterSay(Say(NPC("GIRAL"), overlap: true, "嗨！", "你好呀……"), () =>
                     {
                         Caption("你为什么这么小……");
@@ -81,6 +81,8 @@ public class Session1 : ChapterBase
         {
             girals[0].Mute = true;
             PlayMusic("AI");
+            PlayMusic("vortex");
+
             Caption("快跑！！！往西边跑！！");
             WaitThen(5F, () =>
             {

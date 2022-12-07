@@ -33,3 +33,13 @@ MonoBehaviour:
     SoundPitchMin: 0
     SoundPitchMax: 0
     SoundVolume: 0
+  - SoundName: demo1
+    SoundClip: {fileID: 8300000, guid: 47441c0a478e6a24a81ea4715a0d802a, type: 3}
+    SoundPitchMin: 0
+    SoundPitchMax: 0
+    SoundVolume: 0
+  - SoundName: vortex
+    SoundClip: {fileID: 8300000, guid: 988293c82a5800f44ac6f5006bcb9b51, type: 3}
+    SoundPitchMin: 0
+    SoundPitchMax: 0
+    SoundVolume: 0
