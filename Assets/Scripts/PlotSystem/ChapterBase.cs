@@ -55,7 +55,7 @@ namespace VGF.Plot
 
 
         /// <summary>
-        /// 
+        /// 显示黑色文本
         /// </summary>
         /// <param name="content"></param>
         public void Caption(string content,float seconds=1f,Action callback=null){
@@ -81,7 +81,7 @@ namespace VGF.Plot
         }
         
         /// <summary>
-        /// 
+        /// 切换场景并把角色转移到某点
         /// </summary>
         /// <param name="name"></param>
         /// <param name="point">//传的点不能用DEFAULT不是参数默认值而是https://wenku.baidu.com/view/e9d49b55f142336c1eb91a37f111f18582d00c72.html</param>
@@ -133,13 +133,7 @@ namespace VGF.Plot
             return OnlySay(NPC(npc),lines);
         }
 
-      /// <summary>
-      /// 
-      /// </summary>
-      /// <param name="npc"></param>
-      /// <param name="overlap"></param>
-      /// <param name="lines"></param>
-      /// <returns></returns>
+
         public void Say(string npc,string lineStr,Action action){  //最最最最常用;希望用户使用的
             List<string> list=new List<string>();
             foreach(var item in lineStr.Split("\n")){
@@ -196,10 +190,8 @@ namespace VGF.Plot
         }
 
         /// <summary>
-        /// 
+        /// 绑定NPC说话后效果（委托）
         /// </summary>
-        /// <param name="d"></param>
-        /// <param name="action"></param>
         public void AfterSay(Dialogue_SO d,Action action){
             DialogueManager.instance.Bind(d,action);
         }

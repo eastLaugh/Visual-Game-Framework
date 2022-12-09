@@ -174,6 +174,9 @@ namespace VGF.NPC
         }
 
         private bool _mute = false;
+        /// <summary>
+        /// 禁用spriteRenderer（目前看来）
+        /// </summary>
 
         public bool Mute
         {
