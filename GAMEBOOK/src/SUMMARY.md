@@ -1,0 +1,16 @@
+# Summary
+
+[GoodBye Hex策划书](./Description.md)
+- [概述](./MainMenu.md)
+- [玩法设计](.\PlayDesign\main.md)
+- [主要特色](.\special\main.md)
+- [剧情(主线)流程设计](.\MainPlotDesign\main.md)
+- [场景地图与元素设计](.\MapAndElement\main.md)
+- [剧情(支线)流程设计](.\BranchPlotDesign\main.md)
+- [武器设计](.\WeaponDesign\main.md)
+- [道具设计](.\PropertyDesign\main.md)
+- [技能设计](.\SkillDesign\main.md)
+- [怪物设计](.\EnemyDesign\main.md)
+- [剧情对话设计](.\DialogDesign\main.md)
+- [Demo制作](.\Demo\main.md)
+  - [场景设计](.\Demo\Scene.md)
