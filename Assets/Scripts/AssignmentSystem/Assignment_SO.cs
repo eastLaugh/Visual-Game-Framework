@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using VGF.Plot;
 namespace VGF.Assignment
 {
@@ -17,6 +17,9 @@ namespace VGF.Assignment
 
 
         //public bool Finished=false;
+        /// <summary>
+        /// 任务完成了
+        /// </summary>
 
         public virtual void Finish()
         {

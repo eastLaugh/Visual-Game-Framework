@@ -1,4 +1,4 @@
-using UnityEditor;
+ï»¿using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
@@ -11,7 +11,7 @@ public class InventoryEditor : EditorWindow
     private ItemDataList_SO database;
     private List<ItemDetails> itemList = new List<ItemDetails>();
     private VisualTreeAsset itemRowTemplate;
-    //»ñµÃVisualElement
+    //è·å¾—VisualElement
     private ListView itemListView;
     private ScrollView itemDetailsSection;
     private Sprite defaultIcon;
@@ -38,18 +38,18 @@ public class InventoryEditor : EditorWindow
         VisualElement mainTemplate = visualTree.Instantiate();
         root.Add(mainTemplate);
         itemRowTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/Inventory System/ItemRowTemplate.uxml");
-        //ÄÃµ½Ä¬ÈÏIconÍ¼Æ¬
+        //æ‹¿åˆ°é»˜è®¤Iconå›¾ç‰‡
         defaultIcon = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/M Studio/Art/Items/Icons/icon_M.png");
-        //±äÁ¿¸³Öµ
+        //å˜é‡èµ‹å€¼
         itemListView = root.Q<VisualElement>("BackGround").Q<ListView>("ItemList");
         itemDetailsSection = root.Q<ScrollView>("ItemDetails");
         iconPreview = itemDetailsSection.Q<VisualElement>("IconView");
-        //»ñµÃ°´¼ü
+        //è·å¾—æŒ‰é”®
         root.Q<Button>("AddButton").clicked += OnAddItemClicked;
         root.Q<Button>("DeleteButton").clicked += OnDeleteClicked;
-        //¼ÓÔØÊı¾İ
+        //åŠ è½½æ•°æ®
         LoadDataBase();
-        //Éú³ÉListView
+        //ç”ŸæˆListView
         GenerateListView();
         // A stylesheet can be added to a VisualElement.
         // The style will be applied to the VisualElement and all of its children.
@@ -58,7 +58,7 @@ public class InventoryEditor : EditorWindow
         labelWithStyle.styleSheets.Add(styleSheet);
         root.Add(labelWithStyle);*/
     }
-    #region °´¼üÊÂ¼ş
+    #region æŒ‰é”®äº‹ä»¶
     private void OnDeleteClicked()
     {
         itemList.Remove(activeItem);
@@ -76,7 +76,7 @@ public class InventoryEditor : EditorWindow
         itemListView.Rebuild();
     }
     #endregion
-    private void LoadDataBase()//¼ÓÔØÊı¾İ
+    private void LoadDataBase()//åŠ è½½æ•°æ®
     {
         var dataArray = AssetDatabase.FindAssets("ItemDataList_SO");
         if (dataArray.Length > 1)
@@ -85,7 +85,7 @@ public class InventoryEditor : EditorWindow
             database = AssetDatabase.LoadAssetAtPath(path, typeof(ItemDataList_SO)) as ItemDataList_SO;
         }
         itemList = database.itemDataList;
-        //Èç¹û²»±ê¼ÇÔòÎŞ·¨¼ÇÂ¼Êı¾İ
+        //å¦‚æœä¸æ ‡è®°åˆ™æ— æ³•è®°å½•æ•°æ®
         EditorUtility.SetDirty(database);
         Debug.Log(itemList[0].itemID);
     }
@@ -106,7 +106,7 @@ public class InventoryEditor : EditorWindow
         itemListView.makeItem = makeItem;
         itemListView.bindItem = bindItem;
         itemListView.onSelectionChange += OnlistSelectiontChange;
-        //ÓÒ²àĞÅÏ¢Ãæ°å²»¿É¼û
+        //å³ä¾§ä¿¡æ¯é¢æ¿ä¸å¯è§
         itemDetailsSection.visible = false;
     }
     private void OnlistSelectiontChange(IEnumerable<object> selectedItem)
@@ -138,7 +138,7 @@ public class InventoryEditor : EditorWindow
             iconPreview.style.backgroundImage = newIcon == null ? defaultIcon.texture : newIcon.texture;
             itemListView.Rebuild();
         });*/
-        //ÆäËû±äÁ¿°ó¶¨
+        //å…¶ä»–å˜é‡ç»‘å®š
         /*itemDetailsSection.Q<ObjectField>("itemSprite").value = activeItem.itemOnWorldSprite;
         itemDetailsSection.Q<ObjectField>("itemSprite").RegisterValueChangedCallback(evt =>
         {

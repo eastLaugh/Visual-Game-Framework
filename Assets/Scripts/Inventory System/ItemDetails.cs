@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class ItemDetails
+
+public class ItemDetails  //记录物品详情
 {
     public int itemID;
     public string itemName;
