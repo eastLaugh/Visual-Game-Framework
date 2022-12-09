@@ -12,7 +12,11 @@ public class InventoryEditor : EditorWindow
     private List<ItemDetails> itemList = new List<ItemDetails>();
     private VisualTreeAsset itemRowTemplate;
     //获得VisualElement
+
     private ListView itemListView;
+    /// <summary>
+    /// 画面右边的ScrollView
+    /// </summary>
     private ScrollView itemDetailsSection;
     private Sprite defaultIcon;
     private ItemDetails activeItem;
@@ -117,7 +121,7 @@ public class InventoryEditor : EditorWindow
     }
     private void GetItemDetails()
     {
-        itemDetailsSection.MarkDirtyRepaint();
+        itemDetailsSection.MarkDirtyRepaint(); //?
         itemDetailsSection.Q<IntegerField>("itemID").value = activeItem.itemID;
         itemDetailsSection.Q<IntegerField>("itemID").RegisterValueChangedCallback(evt =>
         {
