@@ -21,7 +21,7 @@ using VGF.Assignment;
              PlayMusic("DB");
              SceneMoveThen("SampleScene",action:() =>
              {
-                 PlayTimeline("wow");
+                 //PlayTimeline("wow");
                  Caption("去高地");
                  Caption("这是一个2秒的Caption", 2f);
                  Caption("这是一个4秒的Caption", 4f);
@@ -44,7 +44,7 @@ using VGF.Assignment;
                          VGF(); //切换到下一章
                      });
                  });
-                 while(SceneManager.GetSceneByName("SampleScene") != SceneManager.GetActiveScene())
+                 
                  Assign(arrival_SO1, (i) =>
                      {
                          SayEmpty("GIRAL");
