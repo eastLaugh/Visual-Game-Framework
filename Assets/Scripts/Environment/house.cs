@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class house : MonoBehaviour
 {
+    [SerializeField]
     private MeshRenderer meshren;
     // Start is called before the first frame update
     void Start()

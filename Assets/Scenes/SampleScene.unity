@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa86388d95fca15419f2793fb6beb9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Transport: 0
   isPlayer: 0
   deltaY: 1
   _interactive: 1
@@ -661,10 +662,10 @@ MonoBehaviour:
   - id: House
     rect:
       serializedVersion: 2
-      x: 2.581628
-      y: 19.673138
-      width: 18.366169
-      height: 24.014448
+      x: 4.529399
+      y: 21.157341
+      width: 5.3886275
+      height: 4.964455
   - id: Highland
     rect:
       serializedVersion: 2
@@ -1018,8 +1019,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u623F\u5B50"
       objectReference: {fileID: 0}
+    - target: {fileID: 7397135722197286979, guid: 9992ebfdb2b12a548a101b7ebc230dff, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7666972021995547731, guid: 9992ebfdb2b12a548a101b7ebc230dff, type: 3}
       propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666972021995547731, guid: 9992ebfdb2b12a548a101b7ebc230dff, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7666972021995547731, guid: 9992ebfdb2b12a548a101b7ebc230dff, type: 3}
@@ -1086,7 +1095,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 92.332
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9054236153104015766, guid: 9992ebfdb2b12a548a101b7ebc230dff, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054236153104015766, guid: 9992ebfdb2b12a548a101b7ebc230dff, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7666972021995547731, guid: 9992ebfdb2b12a548a101b7ebc230dff, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9992ebfdb2b12a548a101b7ebc230dff, type: 3}
 --- !u!1 &1283850802
 GameObject:

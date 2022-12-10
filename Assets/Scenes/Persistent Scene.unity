@@ -1010,6 +1010,7 @@ GameObject:
   - component: {fileID: 348628483}
   - component: {fileID: 348628485}
   - component: {fileID: 348628484}
+  - component: {fileID: 348628486}
   m_Layer: 0
   m_Name: PlotManager
   m_TagString: Untagged
@@ -1048,7 +1049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   chapters:
-  - {fileID: 348628485}
+  - {fileID: 348628486}
   - {fileID: 348628484}
 --- !u!114 &348628484
 MonoBehaviour:
@@ -1074,6 +1075,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6b0b781f8db7b4098671d1dfce48a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &348628486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348628481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c3d3fa53ae28f4fab1aed8351e4bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrival_SO1: {fileID: 11400000, guid: 58c3309e9770926418e2e2a8918694f9, type: 2}
+  goHome: {fileID: 11400000, guid: 9157ec5077d0ff040800c6e1a9006180, type: 2}
+  tm: {fileID: 0}
 --- !u!1 &421684841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,7 +1868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862231094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2183,7 +2199,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2560,13 +2576,13 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: -90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
