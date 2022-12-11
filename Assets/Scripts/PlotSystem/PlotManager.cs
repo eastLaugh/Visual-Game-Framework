@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace VGF.Plot
 {
+
     public class PlotManager : MonoBehaviour
     {
 

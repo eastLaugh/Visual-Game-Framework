@@ -12,7 +12,7 @@ public class InventoryEditor : EditorWindow
     private List<ItemDetails> itemList = new List<ItemDetails>();
     private VisualTreeAsset itemRowTemplate;
     //获得VisualElement
-
+    
     private ListView itemListView;
     /// <summary>
     /// 画面右边的ScrollView
