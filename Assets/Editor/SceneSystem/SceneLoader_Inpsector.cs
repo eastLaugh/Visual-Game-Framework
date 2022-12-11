@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader_Inpsector : Editor
 {
 
+    //增加一个注释
     //Scene[] scenes;
     string originSceneName;
     private void OnEnable()
