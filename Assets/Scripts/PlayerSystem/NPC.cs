@@ -84,7 +84,7 @@ namespace VGF.NPC
         // Update is called once per frame
         void Update()
         {
-            PlayerAndRealNPCUpdate();
+            //PlayerAndRealNPCUpdate();
 
             if (isPlayer)
                 return;

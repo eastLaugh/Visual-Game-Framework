@@ -242,9 +242,9 @@ namespace VGF.SceneSystem
                     TransitionCanvas.enabled = false;
                     Player.instance.Mute=false;
                 };
-                                //执行回调的回调
-                // if (action != null)
-                //     action();
+                //执行回调的回调
+                //if (action != null)
+                     //action();
                     
                 
 

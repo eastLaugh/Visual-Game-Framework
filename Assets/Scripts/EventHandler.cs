@@ -28,11 +28,15 @@ public class EventHandler
       PlayMusic?.Invoke(name);
    }
 
-   // public static Action OnTimelinePlay;
+    // public static Action OnTimelinePlay;
 
-   // public static void OnTimelinePlayInvoke(){
-   //    OnTimelinePlay?.Invoke();
-   // }
-   
+    // public static void OnTimelinePlayInvoke(){
+    //    OnTimelinePlay?.Invoke();
+    // }
+    public static event Action<InventoryLocation, List<InventoryItem>> UpdateInventoryUI;
+    public static void CallUpdateInventoryUI(InventoryLocation location, List<InventoryItem> list)
+    {
+        UpdateInventoryUI?.Invoke(location, list);
+    }
    
 }

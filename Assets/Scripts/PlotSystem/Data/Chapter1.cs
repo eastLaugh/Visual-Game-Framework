@@ -18,10 +18,11 @@ using VGF.Assignment;
          public Dialogue_SO tm;
          public override void Run()
          {
-             PlayMusic("DB");
+             //PlayMusic("DB");
              SceneMoveThen("SampleScene",action:() =>
              {
                  //PlayTimeline("wow");
+                 Debug.Log("action");
                  Caption("去高地");
                  Caption("这是一个2秒的Caption", 2f);
                  Caption("这是一个4秒的Caption", 4f);
@@ -64,7 +65,7 @@ using VGF.Assignment;
 
 
 
-             //return;
+             return;
               Caption("系统委派给你任务：去台阶上吧",default, () =>
               {
                   Assign(arrival_SO1, (i) =>
