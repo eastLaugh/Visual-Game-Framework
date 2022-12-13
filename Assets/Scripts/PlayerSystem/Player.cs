@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
     private bool _mute=false;
     public bool Mute{
         get{
-            if(VGF.Dialogue.DialogueManager.instance.isChatting)
+            if(VGF.Dialogue.DialogueManager.Instance.isChatting)
                 return true;
             return _mute;
         }

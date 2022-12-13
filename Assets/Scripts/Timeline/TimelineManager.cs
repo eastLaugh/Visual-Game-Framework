@@ -83,7 +83,7 @@ public class TimelineManager : Singleton<TimelineManager>
 
         //AfterAction用于Timeline结束后执行后面的语句，与dialogue系统无关
 
-        VGF.Dialogue.DialogueManager.instance.Stop();
+        VGF.Dialogue.DialogueManager.Instance.Stop();
 
         Debug.LogFormat("<color=purple>OnTimeLineStop()</color>");
         try

@@ -43,15 +43,15 @@ public class DialogueBehaviour : PlayableBehaviour
         var so=clip.MakeDialogueForTimeline((float)duration);
 
         
-        bool origin=VGF.Dialogue.DialogueManager.instance.Auto;
+        bool origin=VGF.Dialogue.DialogueManager.Instance.Auto;
         if(clip.Manual){
             //开启手动模式：暂停播放
             director.Pause();
         }else{
-            VGF.Dialogue.DialogueManager.instance.Auto=true;
+            VGF.Dialogue.DialogueManager.Instance.Auto=true;
         }
 
-        VGF.Dialogue.DialogueManager.instance.Bind(so,()=>{
+        VGF.Dialogue.DialogueManager.Instance.Bind(so,()=>{
             director = playable.GetGraph().GetResolver() as PlayableDirector;
             //播放结束
             Debug.LogFormat("<color=purple>DialogueClip播放完毕</color>");
@@ -60,7 +60,7 @@ public class DialogueBehaviour : PlayableBehaviour
             isPlayed=true;            
             // }
             if(!clip.Manual){
-                VGF.Dialogue.DialogueManager.instance.Auto=origin;
+                VGF.Dialogue.DialogueManager.Instance.Auto=origin;
             }
                 
         });

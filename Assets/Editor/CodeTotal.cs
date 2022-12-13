@@ -4,6 +4,7 @@ using System.IO;
 
 public class CodeTotal
 {
+    [ReadOnly]
     static int code_num = 0;
     static int file_num = 0;
 

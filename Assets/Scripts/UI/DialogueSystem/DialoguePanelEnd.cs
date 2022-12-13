@@ -8,7 +8,7 @@ public class DialoguePanelEnd : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         
-        VGF.Dialogue.DialogueManager.instance.AnmaitonEnd();
+        VGF.Dialogue.DialogueManager.Instance.AnmaitonEnd();
 
     }
 

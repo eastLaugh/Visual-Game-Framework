@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEditor;
 public class VGFEditor : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
+        
         Tag("NPC");
         Tag("Player");
         Tag("Point");
@@ -28,3 +30,4 @@ public class VGFEditor : MonoBehaviour
 
     }
 }
+

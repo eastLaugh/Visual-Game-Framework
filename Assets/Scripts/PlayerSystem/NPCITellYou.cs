@@ -46,15 +46,15 @@ namespace VGF.NPC
             currentDialogue=dialogues[UnityEngine.Random.Range(0,dialogues.Count)];
 
             //→对话系统
-            DialogueManager.instance.Run(currentDialogue);
+            DialogueManager.Instance.Run(currentDialogue);
 
             //回调
-            //DialogueManager.instance.dialoguesCallBackDict[currentDialogue]();
+            //DialogueManager.Instance.dialoguesCallBackDict[currentDialogue]();
             //TODO上面这个回调应该放在对话桔束之后，或者干脆放两个回调，一个放这里，一个放对话结束之后hhh
 
             //阅后即焚
             if(currentDialogue.Snapchat){
-                DialogueManager.instance.dialoguesCallBackDict.Remove(currentDialogue);
+                DialogueManager.Instance.dialoguesCallBackDict.Remove(currentDialogue);
                 dialogues.Remove(currentDialogue);
             }
 
@@ -111,7 +111,7 @@ namespace VGF.NPC
         public void Clear(int style=0){
             dialogues.Clear();
             if(style==0)
-                DialogueManager.instance.dialoguesCallBackDict.Clear();
+                DialogueManager.Instance.dialoguesCallBackDict.Clear();
         }
     }
 }

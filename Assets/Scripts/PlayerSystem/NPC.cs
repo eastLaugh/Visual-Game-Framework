@@ -90,7 +90,7 @@ namespace VGF.NPC
                 return;
 
 
-            if (!isPlayer && Interactive && Input.GetKeyDown(KeyCode.E) && npcITellYou && KeyBoardTip.activeSelf && !DialogueManager.instance.isChatting)
+            if (!isPlayer && Interactive && Input.GetKeyDown(KeyCode.E) && npcITellYou && KeyBoardTip.activeSelf && !DialogueManager.Instance.isChatting)
             {
                 if (npcITellYou)
                     npcITellYou.Interact();

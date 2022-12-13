@@ -7,28 +7,43 @@ using UnityEngine.UI;
 
 namespace VGF.Dialogue
 {
-    public class DialogueManager : MonoBehaviour
+    public class DialogueManager : Singleton<DialogueManager>
     {
 
-        private static DialogueManager _instance;
-        public static DialogueManager instance
+
+        override protected void Awake()
         {
-            get
-            {
-                return _instance;
-            }
-        }
-
-
-        void Awake()
-        {
-
-            if (_instance != null)
-                Destroy(_instance);
-            _instance = this;
-
+            base.Awake();
             DialogueCanvas.gameObject.SetActive(false);
             
+            InitDatabase();
+        }
+
+    
+        [Header("Assets/Resources/Dialogue/XXX/XXX 在游戏开始时读取所有Dialogue_SO")]
+        [ReadOnly]
+        public Dialogue_SO[] BuiltInDialogue;
+        void InitDatabase(){
+            Dialogue_SO[] tmp=Resources.LoadAll<Dialogue_SO>("Dialogue");
+            // foreach(var item in tmp){
+            //     Debug.Log(item);
+            // }
+            BuiltInDialogue=tmp;
+        }
+
+        /// <summary>
+        /// Assets/Resources/Dialogue/Session1/test
+        /// ↑以此为例，只需要带入参数test
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Dialogue_SO LoadFromDatabase(string name){
+            foreach(var i in BuiltInDialogue){
+                if(i.name==name)
+                    return i;
+            }
+            Debug.LogError("[]找不到Dialogue_SO");
+            return null;
         }
 
         public Dictionary<Dialogue_SO, Action> dialoguesCallBackDict = new Dictionary<Dialogue_SO, Action>();
@@ -211,3 +226,4 @@ namespace VGF.Dialogue
         }
     }
 }
+

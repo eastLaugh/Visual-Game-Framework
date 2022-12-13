@@ -63,9 +63,16 @@ public class DialogueEditor : EditorWindow
         detailsList.Remove(activeDetails);
         detailsView.Rebuild();
     }
-    private void LoadDataBase()//��������
-    {
-         var dataArray = AssetDatabase.FindAssets("DSO", new[] {"Assets"});
+    private void LoadDataBase(Dialogue_SO so=null)//��������
+    {   
+        if(so){
+            nameArray.Add("Single File - " + AssetDatabase.GetAssetPath(so));
+            dialogueDatabase.Add(so);
+            
+        }else{
+        dialogueDatabase.Clear();
+
+         var dataArray = AssetDatabase.FindAssets("t:Dialogue_SO", new[] {"Assets"});
          Debug.Log(dataArray.Length);
          int len=dataArray.Length;
          for(int i=0; i<len; i++)
@@ -77,6 +84,9 @@ public class DialogueEditor : EditorWindow
             dialogueDatabase.Add((Dialogue_SO)AssetDatabase.LoadAssetAtPath(path, typeof(Dialogue_SO)));
             //database = (Dialogue_SO)AssetDatabase.LoadAssetAtPath(path, typeof(Dialogue_SO));
          }
+
+
+        }
          GenerateSectionsView();
          
         //database = AssetDatabase.LoadAssetAtPath<Dialogue_SO>("Assets/testDialogue.asset");
@@ -147,4 +157,18 @@ public class DialogueEditor : EditorWindow
         activeSections = (Dialogue_SO)selectedItem.First();
         GenerateDetailsView(activeSections);
     }
+//https://forum.unity.com/threads/is-it-possible-to-open-scriptableobjects-in-custom-editor-cindows-with-double-click.992796/
+    [UnityEditor.Callbacks.OnOpenAsset]
+    static bool OnOpenAsset(int instanceID, int line){
+        var tmp = EditorUtility.InstanceIDToObject(instanceID) as Dialogue_SO;
+        if(tmp){
+            DialogueEditor wnd = GetWindow<DialogueEditor>();
+            wnd.titleContent = new GUIContent("DialogueEditor - " + AssetDatabase.GetAssetPath(tmp));
+
+            wnd.LoadDataBase(tmp);
+            
+        }
+        return false;
+    }
+    
 }

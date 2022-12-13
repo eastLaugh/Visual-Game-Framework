@@ -176,7 +176,14 @@ namespace VGF.Plot
             return Say(NPC(npc),overlap:overlap,dialogue,times);
         }
 
-        
+        public bool SayFromDatabase(string npc,string fileName){
+            //
+            // Assets/Resources/Dialogue/
+            //var tmp = Resources.load
+            return true;
+        }
+
+
 
         /// <summary>
         /// 删除NPC的所有对话内容以及委托字典
@@ -193,7 +200,7 @@ namespace VGF.Plot
         /// 绑定NPC说话后效果（委托）
         /// </summary>
         public void AfterSay(Dialogue_SO d,Action action){
-            DialogueManager.instance.Bind(d,action);
+            DialogueManager.Instance.Bind(d,action);
         }
 
 
