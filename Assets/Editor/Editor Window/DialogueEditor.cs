@@ -10,14 +10,14 @@ public class DialogueEditor : EditorWindow
 {
     private VisualTreeAsset sectionRowTemplate;
     private VisualTreeAsset detailsRowTemplate;
-    private List<DialoguePiece>  detailsList=new List<DialoguePiece>();
+    private List<DialoguePiece> detailsList = new List<DialoguePiece>();
     private Dialogue_SO database;
     private ListView detailsView;
     private ListView sectionView;
     private DialoguePiece activeDetails;
     private Dialogue_SO activeSections;
-    private List<Dialogue_SO> dialogueDatabase=new List<Dialogue_SO>();
-    private List<string> nameArray=new List<string>();
+    private List<Dialogue_SO> dialogueDatabase = new List<Dialogue_SO>();
+    private List<string> nameArray = new List<string>();
     [MenuItem("Editor/DialogueEditor")]
     public static void ShowExample()
     {
@@ -29,8 +29,8 @@ public class DialogueEditor : EditorWindow
     {
         // Each editor window contains a root VisualElement object
         VisualElement root = rootVisualElement;
-        
-     
+
+
 
         // Import UXML
         var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/Editor Window/DialogueEditor.uxml");
@@ -41,6 +41,7 @@ public class DialogueEditor : EditorWindow
         detailsRowTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/Editor Window/DetailsRowTemplate.uxml");
         //������ֵ
         detailsView = root.Q<VisualElement>("SectionDetails").Q<ListView>("DetailsView");//
+        detailsView.selectionType=SelectionType.None;//列表不能选择
         sectionView = root.Q<VisualElement>("SectionList").Q<ListView>("SectionView");
         //���¼�
         root.Q<Button>("AddPieces").clicked += OnAddPiecesClicked;
@@ -63,32 +64,35 @@ public class DialogueEditor : EditorWindow
         detailsList.Remove(activeDetails);
         detailsView.Rebuild();
     }
-    private void LoadDataBase(Dialogue_SO so=null)//��������
-    {   
-        if(so){
-            nameArray.Add("[" + AssetDatabase.GetAssetPath(so)+"]");
+    private void LoadDataBase(Dialogue_SO so = null)//��������
+    {
+        if (so)
+        {
+            nameArray.Add("[" + AssetDatabase.GetAssetPath(so) + "]");
             dialogueDatabase.Add(so);
-            
-        }else{
-        dialogueDatabase.Clear();
 
-         var dataArray = AssetDatabase.FindAssets("t:Dialogue_SO", new[] {"Assets"});
-         Debug.Log(dataArray.Length);
-         int len=dataArray.Length;
-         for(int i=0; i<len; i++)
-         {
-           var path = AssetDatabase.GUIDToAssetPath(dataArray[i]);
-           Debug.Log(path+"  ");
-           string[] pieces = path.Split("/");
-           nameArray.Add(" "+pieces[pieces.Length-1]);
-            dialogueDatabase.Add((Dialogue_SO)AssetDatabase.LoadAssetAtPath(path, typeof(Dialogue_SO)));
-            //database = (Dialogue_SO)AssetDatabase.LoadAssetAtPath(path, typeof(Dialogue_SO));
-         }
+        }
+        else
+        {
+            dialogueDatabase.Clear();
+
+            var dataArray = AssetDatabase.FindAssets("t:Dialogue_SO", new[] { "Assets" });
+            Debug.Log(dataArray.Length);
+            int len = dataArray.Length;
+            for (int i = 0; i < len; i++)
+            {
+                var path = AssetDatabase.GUIDToAssetPath(dataArray[i]);
+                Debug.Log(path + "  ");
+                string[] pieces = path.Split("/");
+                nameArray.Add(" " + pieces[pieces.Length - 1]);
+                dialogueDatabase.Add((Dialogue_SO)AssetDatabase.LoadAssetAtPath(path, typeof(Dialogue_SO)));
+                //database = (Dialogue_SO)AssetDatabase.LoadAssetAtPath(path, typeof(Dialogue_SO));
+            }
 
 
         }
-         GenerateSectionsView();
-         
+        GenerateSectionsView();
+
         //database = AssetDatabase.LoadAssetAtPath<Dialogue_SO>("Assets/testDialogue.asset");
         //detailsList = database.dialoguePieces;
         //�����������޷���¼����
@@ -101,7 +105,7 @@ public class DialogueEditor : EditorWindow
         Func<VisualElement> makeItem = () => sectionRowTemplate.Instantiate();
         Action<VisualElement, int> bindItem = (e, i) =>
         {
-            e.Q<Label>("Name").text=nameArray[i];
+            e.Q<Label>("Name").text = nameArray[i];
         };
         sectionView.makeItem = makeItem;
         sectionView.bindItem = bindItem;
@@ -110,7 +114,7 @@ public class DialogueEditor : EditorWindow
     }
     private void GenerateDetailsView(Dialogue_SO list) //�������ݱ༭��Ϣ
     {
-        detailsList=list.dialoguePieces;
+        detailsList = list.dialoguePieces;
         detailsView.MarkDirtyRepaint();
         Func<VisualElement> makeItem = () => detailsRowTemplate.Instantiate();
         Action<VisualElement, int> bindItem = (e, i) =>
@@ -128,20 +132,27 @@ public class DialogueEditor : EditorWindow
                 e.Q<TextField>("Content").RegisterCallback<ChangeEvent<string>>(evt =>
                 {
                     //检测是否换行，如果换行就自动开启新的对话
-                    if(evt.newValue[evt.newValue.Length-1]=='\n'){ //System.Environment.NewLine
-                        detailsList[i].Content = evt.previousValue;
-                        if(i==detailsList.Count-1){
-                            OnAddPiecesClicked();
-                        }
-                        detailsView.GetRootElementForIndex(i+1).Q<TextField>("Content").Focus();
-                        detailsView.Q<Scroller>().value+=10;
-                        
-                    }else{
-                        detailsList[i].Content = evt.newValue;
-                    }
+                    // if (evt.newValue.Length > 0)
+                    //     if (evt.newValue[evt.newValue.Length - 1] == '\n')
+                    //     { //System.Environment.NewLine
+                    //         e.Q<TextField>("Content").value = evt.previousValue;
+                    //         if (i == detailsList.Count - 1)
+                    //         {
+                    //             OnAddPiecesClicked();
+                    //         }
+                    //         Debug.Log(i);
+                           
+                            //detailsView[1].Q<TextField>("Content").Focus();
+                            //detailsView[i].Add(new Label("selected I am "+ (i+1).ToString()));
+                            //detailsView.Q<Scroller>().value += e.resolvedStyle.height;
+
+                        // }
+                        // else
+                        // {
+                            detailsList[i].Content = evt.newValue;
+                        // }
                 });
-
-
+                //e.Add(new Label(i.ToString()));
 
                 e.Q<Slider>("Scaler").value = detailsList[i].Scaler;
                 e.Q<Slider>("Scaler").RegisterCallback<ChangeEvent<float>>(evt =>
@@ -171,18 +182,20 @@ public class DialogueEditor : EditorWindow
         activeSections = (Dialogue_SO)selectedItem.First();
         GenerateDetailsView(activeSections);
     }
-//https://forum.unity.com/threads/is-it-possible-to-open-scriptableobjects-in-custom-editor-cindows-with-double-click.992796/
+    //https://forum.unity.com/threads/is-it-possible-to-open-scriptableobjects-in-custom-editor-cindows-with-double-click.992796/
     [UnityEditor.Callbacks.OnOpenAsset]
-    static bool OnOpenAsset(int instanceID, int line){
+    static bool OnOpenAsset(int instanceID, int line)
+    {
         var tmp = EditorUtility.InstanceIDToObject(instanceID) as Dialogue_SO;
-        if(tmp){
+        if (tmp)
+        {
             DialogueEditor wnd = GetWindow<DialogueEditor>();
             wnd.titleContent = new GUIContent("DialogueEditor");
 
             wnd.LoadDataBase(tmp);
-            
+
         }
         return false;
     }
-    
+
 }
