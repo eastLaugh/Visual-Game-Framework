@@ -66,7 +66,7 @@ public class DialogueEditor : EditorWindow
     private void LoadDataBase(Dialogue_SO so=null)//��������
     {   
         if(so){
-            nameArray.Add("Single File - " + AssetDatabase.GetAssetPath(so));
+            nameArray.Add("[" + AssetDatabase.GetAssetPath(so)+"]");
             dialogueDatabase.Add(so);
             
         }else{
@@ -127,8 +127,22 @@ public class DialogueEditor : EditorWindow
                 e.Q<TextField>("Content").value = detailsList[i].Content;
                 e.Q<TextField>("Content").RegisterCallback<ChangeEvent<string>>(evt =>
                 {
-                    detailsList[i].Content = evt.newValue;
+                    //检测是否换行，如果换行就自动开启新的对话
+                    if(evt.newValue[evt.newValue.Length-1]=='\n'){ //System.Environment.NewLine
+                        detailsList[i].Content = evt.previousValue;
+                        if(i==detailsList.Count-1){
+                            OnAddPiecesClicked();
+                        }
+                        detailsView.GetRootElementForIndex(i+1).Q<TextField>("Content").Focus();
+                        detailsView.Q<Scroller>().value+=10;
+                        
+                    }else{
+                        detailsList[i].Content = evt.newValue;
+                    }
                 });
+
+
+
                 e.Q<Slider>("Scaler").value = detailsList[i].Scaler;
                 e.Q<Slider>("Scaler").RegisterCallback<ChangeEvent<float>>(evt =>
                 {
@@ -163,7 +177,7 @@ public class DialogueEditor : EditorWindow
         var tmp = EditorUtility.InstanceIDToObject(instanceID) as Dialogue_SO;
         if(tmp){
             DialogueEditor wnd = GetWindow<DialogueEditor>();
-            wnd.titleContent = new GUIContent("DialogueEditor - " + AssetDatabase.GetAssetPath(tmp));
+            wnd.titleContent = new GUIContent("DialogueEditor");
 
             wnd.LoadDataBase(tmp);
             
