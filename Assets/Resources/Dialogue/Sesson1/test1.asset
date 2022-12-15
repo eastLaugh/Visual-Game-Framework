@@ -16,9 +16,36 @@ MonoBehaviour:
   - Content: 
     Scaler: 0
     Time: 0
+    index: 0
     Append: 0
   - Content: 
     Scaler: 0
     Time: 0
+    index: 1
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 2
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 3
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 4
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 5
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 6
     Append: 0
   Snapchat: 0

@@ -12,5 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae0632edf596ae499520b95a182d512, type: 3}
   m_Name: Dialogue_SO 1
   m_EditorClassIdentifier: 
-  dialoguePieces: []
+  dialoguePieces:
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 0
+    Append: 0
+  - Content: "\u4F1F\u5927\u7684"
+    Scaler: 100
+    Time: 0
+    index: 1
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 2
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 3
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 4
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 5
+    Append: 0
   Snapchat: 0

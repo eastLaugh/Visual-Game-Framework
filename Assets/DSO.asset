@@ -12,5 +12,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae0632edf596ae499520b95a182d512, type: 3}
   m_Name: DSO
   m_EditorClassIdentifier: 
-  dialoguePieces: []
+  dialoguePieces:
+  - Content: "\u554A\u5927\u5927\u5927"
+    Scaler: 100
+    Time: 0
+    index: 0
+    Append: 1
+  - Content: 
+    Scaler: 100
+    Time: 0
+    index: 1
+    Append: 0
+  - Content: "\u5927\u6735\u5927\u6735"
+    Scaler: 100
+    Time: 0
+    index: 3
+    Append: 0
+  - Content: "\u9632\u64E6\u6D4B\u8BD5"
+    Scaler: 100
+    Time: 0
+    index: 2
+    Append: 0
+  - Content: 2423424
+    Scaler: 100
+    Time: 0
+    index: 4
+    Append: 0
+  - Content: Wsefdfgdfsfedvbeavzr
+    Scaler: 100
+    Time: 0
+    index: 5
+    Append: 0
+  - Content: 10
+    Scaler: 100
+    Time: 0
+    index: 6
+    Append: 0
+  - Content: 11
+    Scaler: 100
+    Time: 0
+    index: 7
+    Append: 0
+  - Content: 12
+    Scaler: 100
+    Time: 0
+    index: 8
+    Append: 0
+  - Content: 13
+    Scaler: 100
+    Time: 0
+    index: 9
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 10
+    Append: 0
+  - Content: "\u60C5\u4EBA\u60C5\u4EBA\u6865\u70ED\u7194\u5668\u70ED\u70ED\u786E\u8BA4\u65E5\u671F\u65E5\u671F\u4ECD\u7136\u56F4\u7ED5\u5343\u4EBA\u4E07\u4EBA"
+    Scaler: 100
+    Time: 0
+    index: 11
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 12
+    Append: 0
+  - Content: RXBEXNNUFMG
+    Scaler: 100
+    Time: 0
+    index: 13
+    Append: 0
   Snapchat: 0

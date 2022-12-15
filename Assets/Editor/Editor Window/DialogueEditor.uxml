@@ -1,20 +1,23 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <ui:VisualElement name="BackGround" style="flex-grow: 1; flex-direction: row;">
-        <ui:VisualElement name="SectionList" style="width: 30%;">
-            <ui:VisualElement name="Header" style="height: auto; flex-direction: row; align-items: center; justify-content: space-between; -unity-background-image-tint-color: rgb(43, 41, 41); background-color: rgba(99, 92, 92, 0.35);">
+    <ui:VisualElement name="BackGround" style="flex-grow: 0; flex-direction: row; height: 75%; width: 100%;">
+        <ui:VisualElement name="SectionList" style="width: 25%;">
+            <ui:VisualElement name="Header" style="height: auto; flex-direction: row; align-items: center; justify-content: space-between; -unity-background-image-tint-color: rgb(43, 41, 41); background-color: rgba(99, 92, 92, 0.35); border-right-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
                 <ui:Label text="Section List" display-tooltip-when-elided="true" style="font-size: 25px; margin-left: 5px;" />
-                <ui:Button text="+" display-tooltip-when-elided="true" style="width: 30px; height: 30px; font-size: 20px;" />
-                <ui:Button text="-" display-tooltip-when-elided="true" style="width: 30px; height: 30px; font-size: 20px;" />
+                <ui:Button text="+" display-tooltip-when-elided="true" style="width: 30px; height: 30px; font-size: 20px; left: 50px;" />
+                <ui:Button text="-" display-tooltip-when-elided="true" style="width: 30px; height: 30px; font-size: 20px; margin-right: 8px;" />
             </ui:VisualElement>
-            <ui:ListView focusable="true" name="SectionView" fixed-item-height="40" reorderable="true" style="height: 776px; width: 247px; flex-grow: 1; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(10, 10, 10); border-right-color: rgb(10, 10, 10); border-top-color: rgb(10, 10, 10); border-bottom-color: rgb(10, 10, 10);" />
+            <ui:ListView focusable="true" name="SectionView" fixed-item-height="40" reorderable="true" style="height: 100%; width: 100%; flex-grow: 1; border-left-width: 1px; border-right-width: 1px; border-top-width: 0; border-bottom-width: 1px; border-left-color: rgb(10, 10, 10); border-right-color: rgb(10, 10, 10); border-top-color: rgb(10, 10, 10); border-bottom-color: rgb(10, 10, 10);" />
         </ui:VisualElement>
-        <ui:VisualElement name="SectionDetails" style="width: 1273px;">
+        <ui:VisualElement name="SectionDetails" style="width: 75%; height: 100%;">
             <ui:VisualElement name="Header" style="height: auto; flex-direction: row; align-items: center; justify-content: flex-start; -unity-background-image-tint-color: rgb(43, 41, 41); background-color: rgba(99, 92, 92, 0.35);">
                 <ui:Label text="Details" display-tooltip-when-elided="true" style="font-size: 25px; margin-left: 5px; -unity-text-align: upper-center;" />
-                <ui:Button text="Add" display-tooltip-when-elided="true" name="AddPieces" style="width: 100px; height: 30px; font-size: 20px; white-space: nowrap; -unity-text-align: middle-center; align-items: flex-end; justify-content: flex-start; left: 550px;" />
-                <ui:Button text="Delete" display-tooltip-when-elided="true" name="DeletePieces" style="width: 100px; height: 30px; font-size: 20px; left: 600px;" />
+                <ui:Button text="Add" display-tooltip-when-elided="true" name="AddPieces" style="width: 100px; height: 30px; font-size: 20px; white-space: nowrap; -unity-text-align: middle-center; align-items: flex-end; justify-content: flex-start; left: 750px;" />
+                <ui:Button text="Delete" display-tooltip-when-elided="true" name="DeletePieces" style="width: 100px; height: 30px; font-size: 20px; left: 800px;" />
             </ui:VisualElement>
-            <ui:ListView focusable="true" reorderable="true" name="DetailsView" fixed-item-height="140" style="flex-grow: 1;" />
+            <ui:ListView focusable="true" name="DetailsView" show-add-remove-footer="false" reorderable="true" fixed-item-height="125" style="flex-grow: 1; border-right-width: 1px; border-bottom-width: 1px; border-left-color: rgb(14, 14, 14); border-right-color: rgb(14, 14, 14); border-top-color: rgb(14, 14, 14); border-bottom-color: rgb(14, 14, 14); height: 100%;" />
         </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="EditArea" style="height: 25%;">
+        <ui:TextField multiline="true" name="Edit" style="padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; flex-grow: 1; font-size: 20px;" />
     </ui:VisualElement>
 </ui:UXML>

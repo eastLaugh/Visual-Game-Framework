@@ -15,20 +15,32 @@ MonoBehaviour:
   dialoguePieces:
   - Content: 123
     Scaler: 0
+    Time: 0
+    index: 0
     Append: 0
   - Content: 33sad
     Scaler: 0
+    Time: 0
+    index: 0
     Append: 0
   - Content: dsadsa
     Scaler: 0
+    Time: 0
+    index: 0
     Append: 0
   - Content: dsadas
     Scaler: 0
+    Time: 0
+    index: 0
     Append: 0
   - Content: da
     Scaler: 0
+    Time: 0
+    index: 0
     Append: 0
   - Content: sdadsaads
     Scaler: 0
+    Time: 0
+    index: 0
     Append: 0
   Snapchat: 0
