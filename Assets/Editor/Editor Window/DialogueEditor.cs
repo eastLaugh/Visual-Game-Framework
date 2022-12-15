@@ -19,8 +19,8 @@ public class DialogueEditor : EditorWindow
     private ListView sectionView;
     private DialoguePiece activeDetails;
     private Dialogue_SO activeSections;
-    private List<Dialogue_SO> dialogueDatabase=new List<Dialogue_SO>();
-    private List<string> nameArray=new List<string>();
+    private List<Dialogue_SO> dialogueDatabase = new List<Dialogue_SO>();
+    private List<string> nameArray = new List<string>();
     [MenuItem("Editor/DialogueEditor")]
     public static void ShowExample()
     {
@@ -32,8 +32,8 @@ public class DialogueEditor : EditorWindow
     {
         // Each editor window contains a root VisualElement object
         VisualElement root = rootVisualElement;
-        
-     
+
+
 
         // Import UXML
         var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/Editor Window/DialogueEditor.uxml");
@@ -44,6 +44,7 @@ public class DialogueEditor : EditorWindow
         detailsRowTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/Editor Window/DetailsRowTemplate.uxml");
         //������ֵ
         detailsView = root.Q<VisualElement>("SectionDetails").Q<ListView>("DetailsView");//
+        detailsView.selectionType=SelectionType.None;//列表不能选择
         sectionView = root.Q<VisualElement>("SectionList").Q<ListView>("SectionView");
         editArea = root.Q<VisualElement>("EditArea");
         //���¼�
@@ -138,14 +139,15 @@ public class DialogueEditor : EditorWindow
             //�����������޷���¼����
             //EditorUtility.SetDirty(dialogueDatabase);
             //Debug.Log(itemList[0].itemID);
-        }
+    }
+
     private void GenerateSectionsView()
     {
         sectionView.MarkDirtyRepaint();
         Func<VisualElement> makeItem = () => sectionRowTemplate.Instantiate();
         Action<VisualElement, int> bindItem = (e, i) =>
         {
-            e.Q<Label>("Name").text=nameArray[i];
+            e.Q<Label>("Name").text = nameArray[i];
         };
         sectionView.makeItem = makeItem;
         sectionView.bindItem = bindItem;
@@ -168,8 +170,37 @@ public class DialogueEditor : EditorWindow
                 {
                     detailsList[i].characterName = evt.newValue;
                 });*/
+
                 e.Q<Label>("Display").text = detailsList[i].Content==null? "Input Text" : detailsList[i].Content;
            
+                //----张牧青的修改
+                //e.Q<TextField>("Content").value = detailsList[i].Content;
+                //e.Q<TextField>("Content").RegisterCallback<ChangeEvent<string>>(evt =>
+                //{
+                    //检测是否换行，如果换行就自动开启新的对话
+                    // if (evt.newValue.Length > 0)
+                    //     if (evt.newValue[evt.newValue.Length - 1] == '\n')
+                    //     { //System.Environment.NewLine
+                    //         e.Q<TextField>("Content").value = evt.previousValue;
+                    //         if (i == detailsList.Count - 1)
+                    //         {
+                    //             OnAddPiecesClicked();
+                    //         }
+                    //         Debug.Log(i);
+                           
+                            //detailsView[1].Q<TextField>("Content").Focus();
+                            //detailsView[i].Add(new Label("selected I am "+ (i+1).ToString()));
+                            //detailsView.Q<Scroller>().value += e.resolvedStyle.height;
+
+                        // }
+                        // else
+                        // {
+                            detailsList[i].Content = evt.newValue;
+                        // }
+                //});
+                //e.Add(new Label(i.ToString()));
+
+                
                 #endregion
             }
         };
@@ -203,19 +234,22 @@ public class DialogueEditor : EditorWindow
         detailsView.MarkDirtyRepaint();
         GenerateDetailsView(activeSections);
     }
-//https://forum.unity.com/threads/is-it-possible-to-open-scriptableobjects-in-custom-editor-cindows-with-double-click.992796/
+    //https://forum.unity.com/threads/is-it-possible-to-open-scriptableobjects-in-custom-editor-cindows-with-double-click.992796/
     [UnityEditor.Callbacks.OnOpenAsset]
-    static bool OnOpenAsset(int instanceID, int line){
+    static bool OnOpenAsset(int instanceID, int line)
+    {
         var tmp = EditorUtility.InstanceIDToObject(instanceID) as Dialogue_SO;
-        if(tmp){
+        if (tmp)
+        {
             DialogueEditor wnd = GetWindow<DialogueEditor>();
-            wnd.titleContent = new GUIContent("DialogueEditor - " + AssetDatabase.GetAssetPath(tmp));
+            wnd.titleContent = new GUIContent("DialogueEditor");
 
             wnd.LoadDataBase(tmp);
-            
+
         }
         return false;
     }
+
     private void GenerateIndex()
     {
         for(int i=0;i<detailsList.Count;i++)
@@ -223,5 +257,5 @@ public class DialogueEditor : EditorWindow
             detailsList[i].index = i;
         }
     }
-    
+
 }
