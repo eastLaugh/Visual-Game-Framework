@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HUD : MonoBehaviour
+public class HUD : Singleton<HUD>
 {
 
     [Header("")]
@@ -13,7 +13,6 @@ public class HUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -46,4 +45,10 @@ public class HUD : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameMenu");
     }
 
+  
+    private GameObject window=>GameObject.Find("PopUpUI/Canvas/Window");
+    private Animator windowsAnimator=>window.GetComponent<Animator>();
+    public void Pop(string message){
+        windowsAnimator.Play("Pop");
+    }
 }
