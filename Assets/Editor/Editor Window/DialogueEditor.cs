@@ -44,7 +44,7 @@ public class DialogueEditor : EditorWindow
         detailsRowTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/Editor Window/DetailsRowTemplate.uxml");
         //������ֵ
         detailsView = root.Q<VisualElement>("SectionDetails").Q<ListView>("DetailsView");//
-        detailsView.selectionType=SelectionType.None;//列表不能选择
+        //detailsView.selectionType=SelectionType.None;//列表不能选择
         sectionView = root.Q<VisualElement>("SectionList").Q<ListView>("SectionView");
         editArea = root.Q<VisualElement>("EditArea");
         //���¼�
@@ -195,7 +195,7 @@ public class DialogueEditor : EditorWindow
                         // }
                         // else
                         // {
-                            detailsList[i].Content = evt.newValue;
+                        //    detailsList[i].Content = evt.newValue;
                         // }
                 //});
                 //e.Add(new Label(i.ToString()));

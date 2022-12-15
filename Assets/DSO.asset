@@ -26,12 +26,12 @@ MonoBehaviour:
   - Content: "\u5927\u6735\u5927\u6735"
     Scaler: 100
     Time: 0
-    index: 3
+    index: 2
     Append: 0
   - Content: "\u9632\u64E6\u6D4B\u8BD5"
     Scaler: 100
     Time: 0
-    index: 2
+    index: 3
     Append: 0
   - Content: 2423424
     Scaler: 100
@@ -82,5 +82,15 @@ MonoBehaviour:
     Scaler: 100
     Time: 0
     index: 13
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 14
+    Append: 0
+  - Content: input content
+    Scaler: 100
+    Time: 0
+    index: 15
     Append: 0
   Snapchat: 0
