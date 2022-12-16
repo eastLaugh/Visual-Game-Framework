@@ -46,9 +46,5 @@ public class HUD : Singleton<HUD>
     }
 
   
-    private GameObject window=>GameObject.Find("PopUpUI/Canvas/Window");
-    private Animator windowsAnimator=>window.GetComponent<Animator>();
-    public void Pop(string message){
-        windowsAnimator.Play("Pop");
-    }
+    
 }
