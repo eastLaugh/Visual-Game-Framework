@@ -21,16 +21,31 @@ public class NewAreaManager : MonoBehaviour
 
     #endregion
 
-    [SerializeField]
-    private Point[] points;
-
-    public Point[] Points
+    //[SerializeField]
+    //[ReadOnly]
+    //private Point[] points;
+    //[ReadOnly]
+    public Point[] points
     {
-        get => points;
+        get{
+            var tmp=GameObject.FindGameObjectsWithTag("Point");
+            if (tmp.Length > 0)
+            {
+                Point[] ans = new Point[tmp.Length];
+                for(int i = 0; i < tmp.Length; i++)
+                {
+                    var point = new Point { id = tmp[i].name, position = tmp[i].transform.position };
+                    ans[i] = point;
+                }
+                return ans;
+            }
+            return null;
+        }
     }
 
 
     [SerializeField]
+    [ReadOnly]
     private RectArea[] rectAreas;
 
     public RectArea[] RectAreas{
