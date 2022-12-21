@@ -10,6 +10,7 @@ using log4net.Repository.Hierarchy;
 using UnityEngine.SceneManagement;
 
 [CustomEditor(typeof(NewAreaManager))]
+[System.Obsolete]
 public class NewAreaManagerEditor : Editor
 {
     public override void OnInspectorGUI()
