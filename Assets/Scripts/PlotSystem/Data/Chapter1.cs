@@ -1,5 +1,4 @@
 
-
  using System.Collections;
  using System.Collections.Generic;
  using UnityEngine;
@@ -63,26 +62,8 @@ using VGF.Assignment;
                      });
              });
 
-
-
              return;
-              Caption("系统委派给你任务：去台阶上吧",default, () =>
-              {
-                  Assign(arrival_SO1, (i) =>
-                  {
-
-                      Caption("我到达了台阶！！现在我要回家了");
-                      Assign(goHome, (i) =>
-                      {
-
-                          SceneMoveThen("Old","Default Position");
-                          Caption("咦？？我怎么到这里来了！", 3f);
-
-                           Caption("ÖÐÎÄÂÒÂë½â¾ö·½°¸ 1¡¢ÐÞ¸ÄMySqlÊý¾Ý¿âµÄ", 10f);
-                      });
-                  });
-
-              });
+    
 
          }
 

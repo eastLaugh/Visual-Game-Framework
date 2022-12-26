@@ -15,13 +15,15 @@ namespace VGF.Plot
     
     public abstract class ChapterBase:Singleton<ChapterBase>{
 
-
+        
         private bool isPlaying;
         public bool IsPlaying{
             get{
                 return isPlaying;
             }
         }
+        //[SerializeField]
+        //private Camera playerCamera;
         /// <summary>
         /// 游戏剧情入口
         /// </summary>
@@ -91,10 +93,9 @@ namespace VGF.Plot
             //Player.instance.transform.position=AreaManager.instance.GetPointByName(point).transform.position;  //在加载前移动位置
 
             Scene(name,()=>{
-
                 Debug.Log("<color=green>场景切换完成,玩家将前往点"+point+"</color>");
                 //Player.instance.ForceMoveToPosition(AreaManager.instance.GetPointByName(point).transform.position);
-                Player.instance.transform.localPosition=NewAreaManager.Instance.FindPointByID(point).Value.position;  //在加载后移动位置
+                //Player.instance.transform.localPosition=NewAreaManager.Instance.FindPointByID(point).Value.position;  //在加载后移动位置
 
                 Player.instance.Mute=false;
 
