@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Giral Demo/Darkness.unity
     guid: 97839787e6f257a4ab66799e210e2bee
+  - enabled: 1
+    path: Assets/Scenes/GoodBye Hex/Demo/castle attic.unity
+    guid: 89bccd8998c4dbd41884b36ca3bcf309
   m_configObjects: {}

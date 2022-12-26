@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae0632edf596ae499520b95a182d512, type: 3}
+  m_Name: CandleMan2
+  m_EditorClassIdentifier: 
+  dialoguePieces:
+  - Content: "\u5FEB\u53BB\u5427\uFF0C\u7EE7\u7EED\u7EA0\u7F20\u4E00\u4E2A\u4F18\u96C5\u7684\u8001\u8721\u70DB\u5BF9\u4F60\u7684\u5047\u9762\u821E\u4F1A\u5192\u9669\u6BEB\u65E0\u5E2E\u52A9\u3002"
+    Scaler: 1
+    Time: 0
+    index: 0
+    Append: 0
+  Snapchat: 0

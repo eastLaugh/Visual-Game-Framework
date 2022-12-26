@@ -1178,6 +1178,7 @@ GameObject:
   - component: {fileID: 348628483}
   - component: {fileID: 348628485}
   - component: {fileID: 348628484}
+  - component: {fileID: 348628486}
   m_Layer: 0
   m_Name: PlotManager
   m_TagString: Untagged
@@ -1216,8 +1217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   chapters:
-  - {fileID: 348628485}
-  - {fileID: 348628484}
+  - {fileID: 348628486}
 --- !u!114 &348628484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,6 +1240,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a6b0b781f8db7b4098671d1dfce48a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &348628486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348628481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8148de11dbf1c04789e212be65b6518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &421684841
@@ -2054,7 +2066,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779418988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.88, y: 2.05, z: 12.19}
+  m_LocalPosition: {x: 15.52, y: 1.25, z: 7.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2220,7 +2232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862231094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2382,7 +2394,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2551,7 +2563,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2927,14 +2939,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
-    angle: 25
+    type: 18
+    angle: 40
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Position: {x: 0, y: 0, z: 0.5}
+    m_Rotation: {x: -90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -3014,7 +3026,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.2
       mode: 0
       spread: 0
       speed:
@@ -7344,8 +7356,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7368,14 +7380,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.17730157, y: -0, z: -0, w: 0.98415655}
-  m_LocalPosition: {x: 0, y: 4.31, z: -9.02}
+  m_LocalRotation: {x: 0.010137372, y: -0, z: -0, w: 0.9999486}
+  m_LocalPosition: {x: 1.61, y: 3.43, z: -8.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 779418992}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20.425, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.162, y: 0, z: 0}
 --- !u!1 &1003433531
 GameObject:
   m_ObjectHideFlags: 0
