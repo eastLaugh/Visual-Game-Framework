@@ -9,7 +9,7 @@ namespace MStudio
         static string[] dataArray;//Find ColorPalette GUID
         static string path;//Get ColorPalette(ScriptableObject) path
         static ColorPalette colorPalette;
-
+        
         static StyleHierarchy()
         {
             dataArray = AssetDatabase.FindAssets("t:ColorPalette");
