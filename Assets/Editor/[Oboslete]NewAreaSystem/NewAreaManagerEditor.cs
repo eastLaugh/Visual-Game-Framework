@@ -83,38 +83,6 @@ public class NewAreaManagerEditor : Editor
 
     }
 
-    /// <summary>
-    /// https://docs.unity3d.com/cn/current/ScriptReference/MenuItem.html
-    /// </summary>
-    [MenuItem("GameObject/[Visual Game Framework]New Point")]
-    static public void CreateNewPoint(MenuCommand menuCommand)
-    {
-        //如果场景中不存在$NEWAREAMANAGER需要自动创建，实现workflow自动化
-        var areaManager = GameObject.Find("$NewAreaManager")?.GetComponent<NewAreaManager>();
-        if (!areaManager)
-            areaManager =new GameObject("$NewAreaManager").AddComponent<NewAreaManager>();
-
-
-
-
-        // Create a custom game object
-        GameObject go = new GameObject("#Point");
-
-        // Ensure it gets reparented if this was a context click (otherwise does nothing)
-        if(menuCommand.context)
-            GameObjectUtility.SetParentAndAlign(go, menuCommand.context as GameObject);
-        else
-            go.transform.position = EditorWindow.GetWindow<SceneView>().camera.transform.position;
-
-        // Register the creation in the undo system
-        Undo.RegisterCreatedObjectUndo(go, "创建 " + go.name);
-        Selection.activeObject = go;
-
-        go.tag = "Point";
-
-        
-
-        
-    }
+    
 
 }
