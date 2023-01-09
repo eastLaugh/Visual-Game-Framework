@@ -10,6 +10,7 @@ public class ItemDetails  //记录物品详情
     public string Description;
     public ItemType itemType;
     public Sprite itemIcon;
+    public Sprite itemWorldSprite;
     public int physicAttack;
     public int magicAttack;
     public int physicDefence;
@@ -18,4 +19,10 @@ public class ItemDetails  //记录物品详情
     public int mpRecover;
     public int sellPrice;
     public int BuyPrice;
+}
+[System.Serializable]
+public class InventoryItem  //
+{
+    public int itemID;
+    public int amount;
 }

@@ -48,6 +48,7 @@ namespace VGF.Plot
         /// <param name="assignment"></param>
         /// <param name="action"></param>
         public void Assign(Assignment_SO assignment,Action<AssignmentCallBackMessagee> action){
+            Debug.Log("assign");
             Assign(assignment);
             AssignmentManager.Instance.assignmentsCallBackDict.Add(assignment,action);
     
@@ -265,6 +266,7 @@ namespace VGF.Plot
 
         protected void Arrival(string name,Action<AssignmentCallBackMessagee> action){
             var tmp = ScriptableObject.CreateInstance<Arrival_SO>();
+            Debug.Log("Arrival Works");
             tmp.Area=name;
             Assign(tmp,action);
         }

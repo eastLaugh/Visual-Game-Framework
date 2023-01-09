@@ -10,6 +10,7 @@ public class Session1 : ChapterBase
     {
         SceneMoveThen("Giral Mental World", action: () =>
         {
+
             Debug.Log("Test");
             //Say("@","ddddddd");
             Timeline("D", () =>

@@ -12,7 +12,7 @@ public class InventoryEditor : EditorWindow
     private List<ItemDetails> itemList = new List<ItemDetails>();
     private VisualTreeAsset itemRowTemplate;
     //获得VisualElement
-    
+
     private ListView itemListView;
     /// <summary>
     /// 画面右边的ScrollView
@@ -91,7 +91,7 @@ public class InventoryEditor : EditorWindow
         itemList = database.itemDataList;
         //如果不标记则无法记录数据
         EditorUtility.SetDirty(database);
-        Debug.Log(itemList[0].itemID);
+        //Debug.Log(itemList[0].itemID);
     }
     private void GenerateListView()
     {
@@ -105,7 +105,7 @@ public class InventoryEditor : EditorWindow
                 e.Q<Label>("List_Name").text = itemList[i] == null ? "NO ITEM" : itemList[i].itemName;
             }
         };
-        Debug.Log(itemList[0].itemID);
+        //Debug.Log(itemList[0].itemID);
         itemListView.itemsSource = itemList;
         itemListView.makeItem = makeItem;
         itemListView.bindItem = bindItem;
@@ -134,20 +134,20 @@ public class InventoryEditor : EditorWindow
             itemListView.Rebuild();
         });
         iconPreview.style.backgroundImage = activeItem.itemIcon == null ? defaultIcon.texture : activeItem.itemIcon.texture;
-        /*itemDetailsSection.Q<ObjectField>("itemIcon").value = activeItem.itemIcon;
+        itemDetailsSection.Q<ObjectField>("itemIcon").value = activeItem.itemIcon;
         itemDetailsSection.Q<ObjectField>("itemIcon").RegisterValueChangedCallback(evt =>
         {
             Sprite newIcon = evt.newValue as Sprite;
             activeItem.itemIcon = newIcon;
             iconPreview.style.backgroundImage = newIcon == null ? defaultIcon.texture : newIcon.texture;
             itemListView.Rebuild();
-        });*/
+        });
         //其他变量绑定
-        /*itemDetailsSection.Q<ObjectField>("itemSprite").value = activeItem.itemOnWorldSprite;
-        itemDetailsSection.Q<ObjectField>("itemSprite").RegisterValueChangedCallback(evt =>
+        itemDetailsSection.Q<ObjectField>("itemWorldSprite").value = activeItem.itemWorldSprite;
+        itemDetailsSection.Q<ObjectField>("itemWorldSprite").RegisterValueChangedCallback(evt =>
         {
-            activeItem.itemOnWorldSprite = (Sprite)evt.newValue;
-        });*/
+            activeItem.itemWorldSprite = (Sprite)evt.newValue;
+        });
 
         itemDetailsSection.Q<EnumField>("itemType").Init(activeItem.itemType);
         itemDetailsSection.Q<EnumField>("itemType").value = activeItem.itemType;

@@ -18,12 +18,14 @@
                 </ui:VisualElement>
                 <ui:VisualElement name="Row1" style="flex-direction: row; height: auto;">
                     <ui:VisualElement name="Left" style="width: 30%; height: auto; align-items: center;">
-                        <ui:VisualElement name="IconView" style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; width: 100px; height: 100px;" />
+                        <ui:VisualElement name="IconView" style="margin-left: 10px; margin-right: 10px; margin-top: 20px; margin-bottom: 20px; flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; width: 120px; height: 100px; justify-content: center;" />
                     </ui:VisualElement>
                     <ui:VisualElement name="Right" style="width: 70%; border-left-width: 0.5px; border-right-width: 0.5px; border-top-width: 0; border-bottom-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
                         <uie:IntegerField label="ID" value="42" name="itemID" style="font-size: 17px;" />
                         <ui:TextField picking-mode="Ignore" label="Name" value="filler text" name="itemName" tooltip="0" usage-hints="None" focusable="true" max-length="-1" style="padding-right: 0; padding-top: 2px; padding-bottom: 2px; flex-direction: column; flex-wrap: nowrap; flex-shrink: 1; flex-basis: auto; font-size: 17px;" />
-                        <uie:EnumField label="Type" value="Center" name="itemType" style="flex-direction: column; font-size: 17px; margin-bottom: 2px;" />
+                        <uie:EnumField label="Type" value="Center" name="itemType" style="flex-direction: row; font-size: 17px; margin-bottom: 2px;" />
+                        <uie:ObjectField label="Icon" type="UnityEngine.Sprite, UnityEngine.CoreModule" name="itemIcon" style="font-size: 17px;" />
+                        <uie:ObjectField label="WorldSprite" type="UnityEngine.Sprite, UnityEngine.CoreModule" name="itemWorldSprite" style="font-size: 17px;" />
                         <ui:VisualElement name="Row2" />
                         <ui:VisualElement name="Row3" />
                     </ui:VisualElement>
