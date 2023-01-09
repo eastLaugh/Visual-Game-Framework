@@ -133,7 +133,7 @@ namespace VGF.NPC
                     if (Transport)
                     {
                         KeyBoardTip.transform.SetParent(Player.instance.transform);
-                        KeyBoardTip.transform.localPosition = new Vector3(0, 2.4f, 0);
+                        KeyBoardTip.transform.localPosition = new Vector3(0, 2.4f, 0);  
                     }
                 }
             }
@@ -153,7 +153,10 @@ namespace VGF.NPC
                 {
                     KeyBoardTip.SetActive(false);
                     if (Transport)
+                    {
                         KeyBoardTip.transform.SetParent(transform);
+                        //KeyBoardTip.transform.localScale = new Vector3(1, 1, 1);
+                    }
                 }
             }
         }

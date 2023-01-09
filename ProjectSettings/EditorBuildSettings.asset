@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/UI/GameMenu.unity
-    guid: 70e2eb1fbaac1ce46815d6d5accb6189
+    guid: 12a2af525016b6d46b11adb735305728
   - enabled: 1
     path: Assets/Scenes/Persistent Scene.unity
     guid: a10722ad18e245e4da6613887112afea
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GoodBye Hex/Demo/castle attic.unity
     guid: 89bccd8998c4dbd41884b36ca3bcf309
+  - enabled: 1
+    path: Assets/Scenes/UI/Loading.unity
+    guid: 9b2b1f9ef91a8fe43b9819ae697ba434
   m_configObjects: {}

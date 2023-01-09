@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public Camera PlayerCamera;
     private CharacterController characterController;
     private Animator animator;
+    private SpriteRenderer sr;
     [SerializeField]private float speedOffset = 1f;
     private void Awake() {
         if(_instance!=null)
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
-        
+        sr=GetComponent<SpriteRenderer>();  
     }
     void Update()
     {
@@ -43,8 +44,9 @@ public class Player : MonoBehaviour
 
         if(characterController.enabled)
             characterController.Move(motion*Time.deltaTime);
-        if(Input.GetAxisRaw("Horizontal")!=0)
-            transform.localScale = new Vector3(Input.GetAxisRaw("Horizontal"),1,1);
+        if (Input.GetAxisRaw("Horizontal") == 1)
+            sr.flipX = false;
+        else sr.flipX = true;
 
         animator.SetFloat("Horizontal",motion.x);
         animator.SetFloat("Vertical",motion.z);
