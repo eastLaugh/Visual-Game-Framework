@@ -23,15 +23,37 @@ namespace MStudio
                 EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyWindow;
             }
         }
+        //EditorApplication.hierarchyWindowItemOnGUI
         private static void OnHierarchyWindow(int instanceID, Rect selectionRect)
         {
+           
             //To make sure there is no error on the first time the tool imported in project
             if (dataArray.Length == 0) return;
 
-            UnityEngine.Object instance = EditorUtility.InstanceIDToObject(instanceID);
+            UnityEngine.GameObject instance = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
+
+            
             if (instance != null)
             {
+
+                //PlusAreaManager对#Point gameobject新样式的改造
+                if (instance.name == "#Point")
+                {
+                    EditorGUI.DrawRect(selectionRect, Color.red);
+                    EditorGUI.LabelField(selectionRect, instance.GetComponent<PlusPoint>().PointName, new GUIStyle
+                    {
+                        //alignment = design.textAlignment,
+                        //fontStyle = design.fontStyle,
+                        normal = new GUIStyleState()
+                        {
+                            textColor = Color.green,
+                        }
+                    });
+                    return;
+                }
+
+
                 for (int i = 0; i < colorPalette.colorDesigns.Count; i++)
                 {
                     var design = colorPalette.colorDesigns[i];

@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     #endregion
 
     public Camera PlayerCamera;
-    public CharacterController characterController;
+    private CharacterController characterController;
     private Animator animator;
     [SerializeField]private float speedOffset = 1f;
     private void Awake() {
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
             return;
 
         var motion =new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"))*Settings.PlayerSpeed*speedOffset;
-        motion.y=-1f;
+        motion.y=-8f;
 
         if(characterController.enabled)
             characterController.Move(motion*Time.deltaTime);
